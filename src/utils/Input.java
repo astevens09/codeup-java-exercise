@@ -18,10 +18,11 @@ public class Input{
         System.out.printf("String entered: %s\n",input);
         return input;
     }
-    public boolean yesNo(){
+    public boolean yesNo(String... prompt){
         String userBool;
         boolean bool;
-        System.out.printf("Enter yes or no:");
+        System.out.printf(prompt[0]);
+        scanner.nextLine();
         userBool = scanner.nextLine();
         bool =  userBool.equalsIgnoreCase("y") || userBool.equalsIgnoreCase("yes");
         System.out.printf("Boolean value: %b\n", bool);
