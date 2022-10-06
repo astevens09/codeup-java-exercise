@@ -47,14 +47,14 @@ public class MoviesApplication {
 
     public static void displayAllMovies(Movie[] movies){
         for(Movie movie: movies){
-            System.out.printf("\nMovie title: %s\n\tMovie category:%s",movie.getName(),movie.getCategory());
+            System.out.printf("\n%s -- %s",movie.getName(),movie.getCategory());
         }
     }
 
     public static void displayMovieByCategory(Movie[] movies, String category){
         for(Movie movie: movies){
             if(movie.category.equalsIgnoreCase(category)){
-                System.out.printf("\nMovie title: %s\n\tMovie category:%s",movie.getName(),movie.getCategory());
+                System.out.printf("\n%s -- %s",movie.getName(),movie.getCategory());
             }
         }
     }
