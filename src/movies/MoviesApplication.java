@@ -20,6 +20,7 @@ public class MoviesApplication {
 
 
     }
+
     public static void executeOption(int choice, Movie[] movies){
         Movie[] temp;
         switch (choice){
