@@ -1,5 +1,6 @@
 package grades;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -73,6 +74,7 @@ public class GradesApplication {
     public static void getUserData(String user, HashMap<String,Student> student){
         String userName = "";
         String studentName = student.get(user).getName();
+        ArrayList<Integer> grades = student.get(user).getGrades();
         double studentAverage = student.get(user).getGradeAverage();
 
         for(String name: student.keySet()){
@@ -82,6 +84,7 @@ public class GradesApplication {
         }
 
         System.out.printf("\nName: %s - GitHub Username: %s\n" +
-                "Current Average: %.1f\n",studentName,userName,studentAverage);
+                "Current Average: %.1f\n"+
+                "",studentName,userName,studentAverage);
     }
 }
