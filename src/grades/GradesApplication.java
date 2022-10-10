@@ -85,6 +85,7 @@ public class GradesApplication {
 
         System.out.printf("\nName: %s - GitHub Username: %s\n" +
                 "Current Average: %.1f\n"+
-                "",studentName,userName,studentAverage);
+                "Grades: ",studentName,userName,studentAverage);
+        grades.forEach(g -> System.out.printf("%d  ", g));
     }
 }
