@@ -11,11 +11,11 @@ public class Input{
     }
 
 
-    public String getString(){
+    public String getString(String... prompt){
         String input;
-        System.out.printf("Enter string:");
+        System.out.printf(prompt[0]);
         input =  scanner.nextLine();
-        System.out.printf("String entered: %s\n",input);
+//        System.out.printf("String entered: %s\n",input);
         return input;
     }
     public boolean yesNo(String... prompt){
@@ -42,9 +42,9 @@ public class Input{
         return userInput;
 
     }
-    public int getInt(){
+    public int getInt(String... prompt){
         int input;
-        System.out.printf("Enter a whole number: ");
+        System.out.printf(prompt[0]);
         input = scanner.nextInt();
         System.out.printf("You entered %d\n", input);
         return input;
