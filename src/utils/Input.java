@@ -22,10 +22,9 @@ public class Input{
         String userBool;
         boolean bool;
         System.out.printf(prompt[0]);
-        scanner.nextLine();
         userBool = scanner.nextLine();
         bool =  userBool.equalsIgnoreCase("y") || userBool.equalsIgnoreCase("yes");
-        System.out.printf("Boolean value: %b\n", bool);
+//        System.out.printf("Boolean value: %b\n", bool);
         return bool;
     }
     public int getInt(int min, int max){
@@ -38,7 +37,7 @@ public class Input{
             System.out.printf("\n");
         }
 
-        System.out.printf("You entered %d\n", userInput);
+//        System.out.printf("You entered %d\n", userInput);
         return userInput;
 
     }
@@ -46,7 +45,7 @@ public class Input{
         int input;
         System.out.printf(prompt[0]);
         input = scanner.nextInt();
-        System.out.printf("You entered %d\n", input);
+//        System.out.printf("You entered %d\n", input);
         return input;
     }
     public double getDouble(double min, double max){

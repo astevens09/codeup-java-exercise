@@ -1,57 +1,97 @@
 import utils.Input;
 
-import java.util.Scanner;
+import java.util.*;
+
 
 public class GroceryListApp {
 
     public static void main(String[] args) {
+        ArrayList<GroceryItem> groceryItems = new ArrayList<>();
+        int tryAgain = -1;
+
+        while(tryAgain == -1){
+            tryAgain = init(groceryItems);
+        }
+
+
 
     }
 
-    public static void init(){
+    public static int init(ArrayList<GroceryItem> items){
         Scanner scanner = new Scanner(System.in);
         String createListChoice = "y";
         Input input = new Input();
 
 
-
-
         createListChoice = input.getString("Would you like to create a grocery list?(y/n)");
 
-        while(!createListChoice.equalsIgnoreCase("y") || !createListChoice.equalsIgnoreCase("yes") ||
-              !createListChoice.equalsIgnoreCase("n") || !createListChoice.equalsIgnoreCase("no")){
-            createListChoice = input.getString("You must enter yes or no to create grocery list:");
-        }
-
         if(createListChoice.equalsIgnoreCase("y") || createListChoice.equalsIgnoreCase("yes")){
-
+           boolean userContinue =true;
+            while(userContinue){
+                items.add(createItem());
+                userContinue = input.yesNo("Do you want to add another item?: ");
+            }
+            printOrganizedList(items);
+            return 1;
         }
 
-        if( createListChoice.equalsIgnoreCase("n") || createListChoice.equalsIgnoreCase("no")){
-
+        if(createListChoice.equalsIgnoreCase("n") || createListChoice.equalsIgnoreCase("no")){
+            System.out.println("Goodbye!");
+            return 1;
         }
 
+        System.out.println("Input must be yes(y) or no(n). Try again\n");
 
-
-
+        return -1;
     }
 
-    public static void optionList(){
+    public static GroceryItem createItem(){
         String optionSelection = "";
         String categorySelection;
+        String itemName;
+        int quantity;
         Input input = new Input();
 
-        System.out.println("Select Food category:");
-        System.out.println("1. Produce\n");
-        System.out.println("2. Dairy\n");
-        System.out.println("3. Frozen\n");
-        System.out.println("4. Meat\n");
+        System.out.println("\nSelect Food category:");
+        System.out.println("1. Produce");
+        System.out.println("2. Dairy");
+        System.out.println("3. Frozen");
+        System.out.println("4. Meat");
 
         categorySelection = input.getString("Enter selection by number: ");
 
         while(Integer.parseInt(categorySelection) < 1 || Integer.parseInt(categorySelection) >4){
-            categorySelection = input.getString("")
+            categorySelection = input.getString("The selection must be between 1-4. Enter: ");
         }
+
+        switch (Integer.parseInt(categorySelection)){
+            case 1: optionSelection = "Produce";
+                    break;
+            case 2: optionSelection = "Dairy";
+                    break;
+            case 3: optionSelection = "Frozen";
+                    break;
+            case 4: optionSelection = "Meat";
+                    break;
+        }
+
+        itemName = input.getString("Enter Item name:");
+        quantity = input.getInt("Enter quantity amount:");
+
+        return new GroceryItem(quantity,itemName,optionSelection);
+    }
+
+    public static void printOrganizedList(ArrayList<GroceryItem> items){
+        Collections.sort(items, new Comparator<GroceryItem>() {
+            @Override
+            public int compare(GroceryItem o1, GroceryItem o2) {
+                return o1.name.compareTo(o2.getName());
+            }
+        });
+        System.out.println("Here is your sorted grocery list");
+        System.out.println("--------------------------------");
+        items.forEach(item -> System.out.println(item.getName()));
+
 
     }
 
