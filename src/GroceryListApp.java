@@ -88,11 +88,39 @@ public class GroceryListApp {
                 return o1.name.compareTo(o2.getName());
             }
         });
-        System.out.println("Here is your sorted grocery list");
+        System.out.println("\nHere is your sorted grocery list");
         System.out.println("--------------------------------");
-        items.forEach(item -> System.out.println(item.getName()));
 
+        System.out.println("Dairy items:");
+        System.out.println("-------------");
+        items.forEach(item -> {
+            if (item.getCategory() == "Dairy")
+                System.out.println(item.getName() +" qnt: "+ item.getQuantity());
+        });
+        System.out.println("\n");
 
+        System.out.println("Produce items:");
+        System.out.println("-------------");
+        items.forEach(item -> {
+            if (item.getCategory() == "Produce")
+                System.out.println(item.getName() +" qnt: "+ item.getQuantity());
+        });
+        System.out.println("\n");
+
+        System.out.println("Frozen items:");
+        System.out.println("-------------");
+        items.forEach(item -> {
+            if (item.getCategory() == "Frozen")
+                System.out.println(item.getName() +" qnt: "+ item.getQuantity());
+        });
+        System.out.println("\n");
+
+        System.out.println("Meat items:");
+        System.out.println("-------------");
+        items.forEach(item -> {
+            if (item.getCategory() == "Meat")
+                System.out.println(item.getName() +" qnt: "+ item.getQuantity());
+        });
     }
 
 

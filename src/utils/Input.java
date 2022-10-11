@@ -23,6 +23,7 @@ public class Input{
         boolean bool;
         System.out.printf(prompt[0]);
         userBool = scanner.nextLine();
+
         bool =  userBool.equalsIgnoreCase("y") || userBool.equalsIgnoreCase("yes");
 //        System.out.printf("Boolean value: %b\n", bool);
         return bool;
