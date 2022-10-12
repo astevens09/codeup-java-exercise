@@ -88,9 +88,11 @@ public class GroceryListApp {
                 return o1.name.compareTo(o2.getName());
             }
         });
+
         System.out.println("\nHere is your sorted grocery list");
         System.out.println("--------------------------------");
 
+        //Dairy Item
         System.out.println("Dairy items:");
         System.out.println("-------------");
         items.forEach(item -> {
@@ -99,6 +101,7 @@ public class GroceryListApp {
         });
         System.out.println("\n");
 
+        //Produce Items
         System.out.println("Produce items:");
         System.out.println("-------------");
         items.forEach(item -> {
