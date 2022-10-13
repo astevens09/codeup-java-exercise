@@ -95,7 +95,7 @@ public class GroceryListApp {
         //Dairy Item
         System.out.println("Dairy items:");
         System.out.println("-------------");
-        items.forEach(item -> {
+        items.forEach((GroceryItem item) -> {
             if (item.getCategory() == "Dairy")
                 System.out.println(item.getName() +" qnt: "+ item.getQuantity());
         });

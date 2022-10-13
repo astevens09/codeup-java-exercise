@@ -42,12 +42,17 @@ public class Input{
         return userInput;
 
     }
-    public int getInt(String... prompt){
-        int input;
+    public int getInt(String... prompt)throws Exception{
+        String input;
+        int intInput =-1;
+
+
         System.out.printf(prompt[0]);
-        input = scanner.nextInt();
-//        System.out.printf("You entered %d\n", input);
-        return input;
+        input = scanner.nextLine();
+        intInput = Integer.valueOf(input);
+
+        System.out.printf("You entered %d\n", intInput);
+        return intInput;
     }
     public double getDouble(double min, double max){
         System.out.printf("Enter a decimal number between %.2f and %.2f: ", min, max);
