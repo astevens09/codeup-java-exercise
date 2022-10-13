@@ -1,8 +1,5 @@
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.*;
 import java.util.List;
 
 public class FileIOTest {
@@ -10,22 +7,66 @@ public class FileIOTest {
     public static void main(String[] args) {
         String strDirectory = "Data";
         Path dataDirectory = Paths.get(strDirectory);
+        Path dataFile = Paths.get("Data","testData.txt");
 
-        try {
-            if(Files.exists(dataDirectory)){
-                System.out.println("Path Exist!");
-            }else{
-               Path newDirectory = Files.createDirectory(dataDirectory);
-                System.out.println("New Directory created at: "+newDirectory.toString());
-            }
 
-//            if(Files.exists(upperDataDirectory))
-//                System.out.println("Upper Data Path Exist!");
-        }catch(Exception e){
-            System.out.println(e.getMessage());
+
+//        try {
+//            if(Files.exists(dataDirectory)){
+//                System.out.println("Path Exist!");
+//            }else{
+//               Path newDirectory = Files.createDirectory(dataDirectory);
+//                System.out.println("New Directory created at: "+newDirectory.toString());
+//            }
+//
+////            if(Files.exists(upperDataDirectory))
+////                System.out.println("Upper Data Path Exist!");
+//        }catch(Exception e){
+//            System.out.println(e.getMessage());
+//            e.printStackTrace();
+//        }
+////
+//        try {
+//            if(Files.exists(dataFile)){
+//                System.out.println("File exist");
+//            }else{
+//               Path doneFile = Files.createFile(dataFile);
+//                System.out.println("New file created: "+ doneFile.toString());
+//            }
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+
+//        try {
+//            List<String> data = Files.readAllLines(dataFile);
+//            data.forEach(System.out::println);
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+
+//        try{
+//            String content = "Hello world X10!";
+//            Files.write(dataFile,content.getBytes(), StandardOpenOption.APPEND);
+//            System.out.println("Data was written to "+ dataFile.toString());
+//
+//            Path newFile = Paths.get("Data/newTestData.txt");
+//            Path p = Files.createFile(newFile);
+//
+//            List<String> data = Files.readAllLines(dataFile);
+//            Files.write(newFile,data);
+//
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+        try{
+            Path source = Paths.get("textFile.txt");
+            Path destination = Paths.get("Data/copiedFile.txt");
+
+            Files.copy(source, destination);
+        }catch (Exception e){
             e.printStackTrace();
         }
-
 
 
 
