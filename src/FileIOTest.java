@@ -10,7 +10,7 @@ public class FileIOTest {
         Path dataFile = Paths.get("Data","testData.txt");
 
 
-
+/****************Create Directory****************/
 //        try {
 //            if(Files.exists(dataDirectory)){
 //                System.out.println("Path Exist!");
@@ -25,7 +25,8 @@ public class FileIOTest {
 //            System.out.println(e.getMessage());
 //            e.printStackTrace();
 //        }
-////
+
+/****************Create File****************/
 //        try {
 //            if(Files.exists(dataFile)){
 //                System.out.println("File exist");
@@ -36,14 +37,14 @@ public class FileIOTest {
 //        }catch (Exception e){
 //            e.printStackTrace();
 //        }
-
+/****************Read data****************/
 //        try {
 //            List<String> data = Files.readAllLines(dataFile);
 //            data.forEach(System.out::println);
 //        }catch (Exception e){
 //            e.printStackTrace();
 //        }
-
+/****************Write data****************/
 //        try{
 //            String content = "Hello world X10!";
 //            Files.write(dataFile,content.getBytes(), StandardOpenOption.APPEND);
@@ -59,6 +60,7 @@ public class FileIOTest {
 //        }catch (Exception e){
 //            e.printStackTrace();
 //        }
+/****************Copy files****************/
         try{
             Path source = Paths.get("textFile.txt");
             Path destination = Paths.get("Data/copiedFile.txt");

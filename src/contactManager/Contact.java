@@ -1,19 +1,21 @@
 package contactManager;
 
-public class Contact {
-    private String name;
-   private int phoneNumber;
+import java.io.Serializable;
 
-   public Contact(String name, int number){
-       this.name = name;
-       phoneNumber = number;
-   }
+public class Contact implements Serializable {
+    private String name;
+    private String phoneNumber;
+
+    public Contact(String name, String number) {
+        this.name = name;
+        phoneNumber = number;
+    }
 
     public String getName() {
         return name;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -21,7 +23,7 @@ public class Contact {
         this.name = name;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 }
