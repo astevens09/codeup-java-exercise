@@ -67,12 +67,15 @@ public class Input{
         System.out.printf("You entered %.2f\n", userInput);
         return userInput;
     }
-    public double getDouble(String... prompt){
-        double input;
+    public double getDouble(String... prompt)throws Exception{
+        String input;
+        double doubleInput;
         System.out.printf(prompt[0]);
-        input =  scanner.nextDouble();
+
+        input =  scanner.nextLine();
+        doubleInput = Double.valueOf(input);
 //        System.out.printf("You entered %.2f\n", input);
-        return input;
+        return doubleInput;
     }
 
 //    public static void main(String[] args) {
